@@ -1,0 +1,17 @@
+/* Contains CSS for Main Page */
+
+.spinner-style {
+    animation: end-spinner 1s linear;
+    height: 180px;
+    width: 180px;
+}
+
+@keyframes end-spinner {
+    from {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+    }
+}

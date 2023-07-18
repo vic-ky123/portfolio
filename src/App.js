@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import MainPage from './pages/MainPage';
 
 function App() {
   return (
     <div className="main-container">
-      <h1>Home screen</h1>
+      <MainPage />
     </div>
   );
 }
