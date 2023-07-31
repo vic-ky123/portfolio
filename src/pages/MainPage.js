@@ -14,7 +14,7 @@ const MainPage = () => {
 
     return (
         <>
-            <div>
+            <div className="main-page-main-container">
                 {
                     showSpinner ?
                         <>

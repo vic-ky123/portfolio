@@ -1,9 +1,15 @@
 /* Contains CSS for Main Page */
 
+.main-page-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .spinner-style {
     animation: end-spinner 1s linear;
-    height: 180px;
-    width: 180px;
+    height: 100px;
+    width: 100px;
 }
 
 @keyframes end-spinner {
