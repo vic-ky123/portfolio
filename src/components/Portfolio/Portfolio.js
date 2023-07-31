@@ -55,7 +55,7 @@ const Portfolio = () => {
         <>
             <div className="portfolio-main-container">
                 <AsideNavbar data={menuData} setActive={setActive} currItem={currItem} />
-                <div>
+                <div style={{ marginTop: "1800px" }}>
                     <section id="home">
                         <p>home</p>
                         <p>home</p>

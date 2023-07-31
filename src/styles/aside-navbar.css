@@ -31,7 +31,7 @@
     border: 1px solid var(--text-black-700);
     border-radius: 5px;
     padding: 3px 7px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -63,6 +63,17 @@
 
 .aside-nav li a.active {
     color: var(--skin-color);
+    animation: activate 0.23s linear;
+}
+
+@keyframes activate {
+    from {
+        color: var(--text-black-900);
+    }
+
+    to {
+        color: var(--skin-color);
+    }
 }
 
 .aside-icon-class {
