@@ -8,8 +8,8 @@
 
 .spinner-style {
     animation: end-spinner 1s linear;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
 }
 
 @keyframes end-spinner {
