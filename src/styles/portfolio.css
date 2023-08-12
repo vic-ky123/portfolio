@@ -399,3 +399,86 @@ h3.my-profession span {
     width: 250px;
     float: right;
 }
+
+/* ******** Skills Section ******** */
+
+/* ******** Projects Section ******** */
+
+/* ******** Contact Section ******** */
+
+.contact {
+    min-height: 100vh;
+    display: flex;
+    color: var(--text-black-900);
+}
+
+.contact .contact-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.contact .contact-main-container {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 1030px; */
+}
+
+.contact .contact-main-container .feel-free-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.contact .contact-main-container .feel-free-contact h3 {
+    font-size: 19px;
+    margin-bottom: 0px;
+    font-weight: 700;
+    color: var(--skin-color);
+}
+
+.contact .contact-main-container .feel-free-contact p {
+    margin-bottom: 0px;
+    color: var(--text-black-900);
+}
+
+.contact .contact-main-container .contact-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: red; */
+    padding: 10px 20px;
+}
+
+.contact .contact-main-container .contact-details .contact-details-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+
+.contact .contact-main-container .contact-details .contact-details-item .detail-icon {
+    color: var(--skin-color);
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.contact .contact-main-container .contact-details .contact-details-item h4 {
+    color: var(--text-black-900);
+    font-size: 16px;
+}
+
+.contact .contact-main-container .contact-details .contact-details-item p {
+    color: var(--text-black-900);
+    font-size: 15px;
+    margin-bottom: 5px;
+}

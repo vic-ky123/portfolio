@@ -85,7 +85,7 @@ const Portfolio = () => {
                     {/* ******** Home Section Ends ******** */}
 
                     {/* ******** About Section Starts ******** */}
-                    <section id="about" className="about section">
+                    <section id="about" className="about section hidden">
                         <div className="container">
                             <div className="row">
                                 <div className="section-title padd-15">
@@ -279,27 +279,6 @@ const Portfolio = () => {
                     </section>
                     {/* ******** About Section Ends ******** */}
 
-
-                    {/* <About id="about" /> */}
-                    {/* <section id="about">
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                        <p>about</p>
-                    </section> */}
                     {/* <section id="skills">
                         <p>skills</p>
                         <p>skills</p>
@@ -343,30 +322,73 @@ const Portfolio = () => {
                         <p>projects</p>
                         <p>projects</p>
                         <p>projects</p>
+                    </section> */}
+
+                    {/* ******** Contact Section Starts ******** */}
+                    <section id="contact" className="contact section">
+                        <div className="container">
+                            <div className="row">
+                                <div className="section-title">
+                                    <h2>Contact Me</h2>
+                                </div>
+                            </div>
+                            <div className="contact-main-container padd-15">
+                                <div style={{ marginBottom: "50px" }}>
+                                    <div className="feel-free-contact">
+                                        <h3>Feel free to contact me</h3>
+                                        <p>I'm available...</p>
+                                    </div>
+                                    <div className="contact-details">
+                                        <div className="contact-details-item">
+                                            <i className="bi bi-telephone-fill detail-icon" />
+                                            <h4>on Call</h4>
+                                            <p>+91 9092137916</p>
+                                        </div>
+                                        <div className="contact-details-item">
+                                            <i className="bi bi-envelope-fill detail-icon" />
+                                            <h4>thru' E-mail</h4>
+                                            <p>vigneshlokeshbabu131@gmail.com</p>
+                                        </div>
+                                        <div className="contact-details-item">
+                                            <i className="bi bi-geo-alt-fill detail-icon" />
+                                            <h4>in City</h4>
+                                            <p>Chennai, India</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="feel-free-contact">
+                                        <h3>Get in-touch</h3>
+                                        <p>Looking forward to reply to your message... : )</p>
+                                    </div>
+                                    {/* <div className="contact-details">
+                                        <div className="contact-details-item">
+                                            <i className="bi bi-telephone-fill detail-icon" />
+                                            <h4>on Call</h4>
+                                            <p>+91 9092137916</p>
+                                        </div>
+                                        <div className="contact-details-item">
+                                            <i className="bi bi-envelope-fill detail-icon" />
+                                            <h4>thru' E-mail</h4>
+                                            <p>vigneshlokeshbabu131@gmail.com</p>
+                                        </div>
+                                        <div className="contact-details-item">
+                                            <i className="bi bi-geo-alt-fill detail-icon" />
+                                            <h4>in City</h4>
+                                            <p>Chennai, India</p>
+                                        </div>
+                                        <div className="contact-details-item">
+                                            <i className="bi bi-geo-alt-fill detail-icon" />
+                                            <h4>in City</h4>
+                                            <p>Chennai, India</p>
+                                        </div>
+                                    </div> */}
+                                </div>
+                            </div>
+                        </div>
                     </section>
-                    <section id="contact">
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                        <p>contact</p>
-                    </section>  */}
+                    {/* ******** Contact Section Ends ******** */}
+
                 </div>
             </div>
         </>
