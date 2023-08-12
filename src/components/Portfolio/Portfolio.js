@@ -118,7 +118,7 @@ const Portfolio = () => {
                                         <div className="personal-info padd-15">
                                             <p>
                                                 <span>City</span>
-                                                <span>Chennai</span>
+                                                <span>Chennai, India</span>
                                             </p>
                                             <p>
                                                 <span>Email</span>
@@ -131,17 +131,147 @@ const Portfolio = () => {
                                         </div>
                                     </div>
                                     <div className="resume-contact-btn-section">
-                                            <a
-                                                href={require("../../assets/files/Vignesh_L_01.docx")}
-                                                className="btn resume-btn"
-                                                download="Example-PDF-document"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                            >Resume</a>
-                                            <a
-                                                href="#contact"
-                                                className="btn contact-btn" 
-                                            >Contact</a>
+                                        <a
+                                            href={require("../../assets/files/Vignesh_L_01.docx")}
+                                            className="btn resume-btn"
+                                            download="Example-PDF-document"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >Resume</a>
+                                        <button
+                                            onClick={() => console.log("Contact button clicked...!!!")}
+                                            className="btn contact-btn"
+                                        >Contact</button>
+                                    </div>
+                                    <div className="edu-exp-section">
+                                        <div className="edu-exp-section-item padd-15">
+                                            <h3>Education</h3>
+                                            <div className="edu-exp-container">
+                                                <div className="timeline-item">
+                                                    <div className="circle-dot"></div>
+                                                    <div className="timeline-date-place">
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-calendar-check-fill time-line-icon"></i> 2019 - 2021
+                                                        </h3>
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-geo-alt-fill time-line-icon"></i> Chennai
+                                                        </h3>
+                                                    </div>
+                                                    <h4 className="timeline-title">Master of Computer Application (MCA)</h4>
+                                                    <div className="edu-details">
+                                                        <p>
+                                                            <span>University</span>
+                                                            <span>University of Madras</span>
+                                                        </p>
+                                                        <p>
+                                                            <span>College</span>
+                                                            <span>MEASI Institute of Information Technology</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="timeline-item">
+                                                    <div className="circle-dot"></div>
+                                                    <div className="timeline-date-place">
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-calendar-check-fill time-line-icon"></i> 2016 - 2019
+                                                        </h3>
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-geo-alt-fill time-line-icon"></i> Chennai
+                                                        </h3>
+                                                    </div>
+                                                    <h4 className="timeline-title">Bachelor of Computer Application (BCA)</h4>
+                                                    <div className="edu-details">
+                                                        <p>
+                                                            <span>University</span>
+                                                            <span>University of Madras</span>
+                                                        </p>
+                                                        <p>
+                                                            <span>College</span>
+                                                            <span>Jaya College of Arts & Science</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="timeline-item">
+                                                    <div className="circle-dot"></div>
+                                                    <div className="timeline-date-place">
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-calendar-check-fill time-line-icon"></i> 2015 - 2016
+                                                        </h3>
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-geo-alt-fill time-line-icon"></i> Chennai
+                                                        </h3>
+                                                    </div>
+                                                    <h4 className="timeline-title">HSC (Class 12)</h4>
+                                                    <div className="edu-details">
+                                                        <p>
+                                                            <span>Board</span>
+                                                            <span>TNBSE</span>
+                                                        </p>
+                                                        <p>
+                                                            <span>School</span>
+                                                            <span>Bhaktavatsalam Vidyashram</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="timeline-item" style={{ paddingBottom: "10px" }}>
+                                                    <div className="circle-dot"></div>
+                                                    <div className="timeline-date-place">
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-calendar-check-fill time-line-icon"></i> 2013 - 2014
+                                                        </h3>
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-geo-alt-fill time-line-icon"></i> Chennai
+                                                        </h3>
+                                                    </div>
+                                                    <h4 className="timeline-title">SSC (Class 10)</h4>
+                                                    <div className="edu-details">
+                                                        <p>
+                                                            <span>Board</span>
+                                                            <span>CBSE</span>
+                                                        </p>
+                                                        <p>
+                                                            <span>School</span>
+                                                            <span>Bhaktavatsalam Vidyashram</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="edu-exp-section-item padd-15">
+                                            <h3>Experience</h3>
+                                            <div className="edu-exp-container">
+                                                <div className="timeline-item" style={{ paddingBottom: "10px" }}>
+                                                    <div className="circle-dot"></div>
+                                                    <div className="timeline-date-place">
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-calendar-check-fill time-line-icon"></i> Jan '22 - Present
+                                                        </h3>
+                                                        <h3 className="timeline-date">
+                                                            <i className="bi bi-geo-alt-fill time-line-icon"></i> Chennai
+                                                        </h3>
+                                                    </div>
+                                                    <h4 className="timeline-title">Clayfin Technologies</h4>
+                                                    <div className="edu-details">
+                                                        <p>
+                                                            <span>Designation</span>
+                                                            <span>Software developer</span>
+                                                        </p>
+                                                        <p>
+                                                            <span>Forte</span>
+                                                            <span>Front-end development</span>
+                                                        </p>
+                                                        <p>
+                                                            <span>Skills</span>
+                                                            <span>React.JS, React Native</span>
+                                                        </p>
+                                                        <p>
+                                                            <span>Experience</span>
+                                                            <span>1 year & 8 months</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -109,7 +109,7 @@
 }
 
 .hidden {
-    display: none !important; 
+    display: none !important;
 }
 
 /* ******** Home Section ******** */
@@ -144,7 +144,7 @@ h3.my-profession {
 }
 
 h3.my-profession span {
-   color: var(--skin-color);
+    color: var(--skin-color);
 }
 
 .home .home-info p {
@@ -165,7 +165,7 @@ h3.my-profession span {
     text-align: center;
 }
 
-.home .dp-img img  {
+.home .dp-img img {
     height: 300px;
     width: 250px;
     margin: auto;
@@ -176,7 +176,7 @@ h3.my-profession span {
     content: '';
     position: absolute;
     height: 70px;
-    width: 160px; 
+    width: 160px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
     left: 20px;
@@ -229,6 +229,11 @@ h3.my-profession span {
     color: var(--text-black-700);
     font-size: 15px;
     line-height: 25px;
+    text-align: justify;
+}
+
+.about .about-content .about-text p::first-letter {
+    margin-left: 40px;
 }
 
 .personal-info-section {
@@ -274,6 +279,7 @@ h3.my-profession span {
     flex-direction: row;
     align-items: center;
     margin-left: 20px;
+    margin-bottom: 10px;
     flex: 0 0 100%;
     padding: 10px;
 }
@@ -284,6 +290,112 @@ h3.my-profession span {
 
 .about .about-content .resume-contact-btn-section .contact-btn {
     margin-left: 10px;
-    background-color: var(--bg-black-50);
+    padding: 9.5px 25px;
+    background-color: var(--bg-black-100);
     color: var(--text-black-900);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.edu-exp-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 5px;
+}
+
+.about .about-content .edu-exp-section edu-exp-section-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .about-content .edu-exp-section .edu-exp-section-item h3 {
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.about .about-content .edu-exp-section .edu-exp-section-item .edu-exp-container {
+    width: 420px;
+    background-color: var(--bg-black-100);
+    padding: 30px 20px;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 0.75rem var(--bg-black-200));
+    border: 1px solid var(--bg-black-150);
+    position: relative;
+}
+
+.about .about-content .edu-exp-section .edu-exp-section-item .edu-exp-container .timeline-item {
+    border-left: 3px solid var(--skin-color);
+    padding-left: 15px;
+    padding-bottom: 35px;
+}
+
+.circle-dot {
+    height: 13px;
+    width: 13px;
+    background-color: var(--skin-color);
+    margin-left: -22.5px;
+    border-radius: 50px;
+    position: absolute;
+}
+
+.edu-exp-content-container {
+    margin-top: 10px;
+}
+
+.timeline-date-place {
+    margin-bottom: 10px;
+}
+
+.time-line-icon {
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.about .about-content .edu-exp-section .edu-exp-section-item h3.timeline-date {
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-black-700);
+}
+
+.about .about-content .edu-exp-section .edu-exp-section-item h4.timeline-title {
+    margin: 3px 0 10px 0;
+    font-weight: 600;
+    color: var(--text-black-900);
+}
+
+.about .about-content .edu-exp-section .edu-exp-section-item .timeline-item .edu-details {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+}
+
+.about .about-content .edu-exp-section .edu-exp-section-item .timeline-item .edu-details p {
+    font-size: 14px;
+    margin-left: -9px;
+}
+
+.about .about-content .edu-exp-section .edu-exp-section-item .timeline-item .edu-details p span:nth-child(1) {
+    width: 100px;
+    float: left;
+    color: var(--text-black-900);
+    font-weight: bold;
+}
+
+.about .about-content .edu-exp-section .edu-exp-section-item .timeline-item .edu-details p span:nth-child(2) {
+    width: 250px;
+    float: right;
 }
