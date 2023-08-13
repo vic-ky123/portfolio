@@ -338,6 +338,26 @@ h3.my-profession span {
     padding-bottom: 35px;
 }
 
+.circle-dot-initial {
+    height: 13px;
+    width: 13px;
+    background-color: var(--skin-color);
+    margin-left: -22.5px;
+    border-radius: 50px;
+    position: absolute;
+    margin-top: 5px;
+}
+
+.circle-dot-initial::before {
+    content: "";
+    height: 10px;
+    position: absolute;
+    width: 4px;
+    top: -10.5px;
+    left: 5px;
+    background-color: var(--bg-black-100);
+}
+
 .circle-dot {
     height: 13px;
     width: 13px;
@@ -345,6 +365,7 @@ h3.my-profession span {
     margin-left: -22.5px;
     border-radius: 50px;
     position: absolute;
+    margin-top: 5px;
 }
 
 .edu-exp-content-container {
@@ -410,11 +431,20 @@ h3.my-profession span {
     min-height: 100vh;
     display: flex;
     color: var(--text-black-900);
+    /* min-width: 1096px; */
+    width: 100%;
+    margin: 0 auto;
+    /* background-color: red; */
 }
 
 .contact .contact-content {
     flex: 0 0 100%;
     max-width: 100%;
+
+    /* max-width: 1100px;
+    width: 100%;
+    margin: auto;
+    background-color: red; */
 }
 
 .contact .contact-main-container {
@@ -452,7 +482,6 @@ h3.my-profession span {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    /* background-color: red; */
     padding: 10px 20px;
 }
 
@@ -461,8 +490,7 @@ h3.my-profession span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: blue; */
-    padding: 10px 20px;
+    padding: 10px 30px;
     margin: 0 10px;
 }
 

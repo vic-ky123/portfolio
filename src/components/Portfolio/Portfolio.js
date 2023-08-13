@@ -44,12 +44,16 @@ const Portfolio = () => {
         }
     ];
 
+    // const setActive = (menuItem) => {
+    //     menuData.map((item) => {
+    //         if (item.menuName === menuItem) {
+    //             setCurrItem(menuItem);
+    //         }
+    //     });
+    // };
+
     const setActive = (menuItem) => {
-        menuData.map((item) => {
-            if (item.menuName === menuItem) {
-                setCurrItem(menuItem);
-            }
-        })
+        menuData.map((item) => item.menuName === menuItem ? setCurrItem(menuItem) : null);
     };
 
     return (
@@ -59,7 +63,7 @@ const Portfolio = () => {
                 <div className="main-content-section">
 
                     {/* ******** Home Section Starts ******** */}
-                    <section id="home" className="home section hidden">
+                    <section id="home" className="home section">
                         <div className="container">
                             <div className="row">
                                 <div className="home-info padd-15">
@@ -85,7 +89,7 @@ const Portfolio = () => {
                     {/* ******** Home Section Ends ******** */}
 
                     {/* ******** About Section Starts ******** */}
-                    <section id="about" className="about section hidden">
+                    <section id="about" className="about section">
                         <div className="container">
                             <div className="row">
                                 <div className="section-title padd-15">
@@ -148,7 +152,7 @@ const Portfolio = () => {
                                             <h3>Education</h3>
                                             <div className="edu-exp-container">
                                                 <div className="timeline-item">
-                                                    <div className="circle-dot"></div>
+                                                    <div className="circle-dot-initial"></div>
                                                     <div className="timeline-date-place">
                                                         <h3 className="timeline-date">
                                                             <i className="bi bi-calendar-check-fill time-line-icon"></i> 2019 - 2021
@@ -241,7 +245,7 @@ const Portfolio = () => {
                                             <h3>Experience</h3>
                                             <div className="edu-exp-container">
                                                 <div className="timeline-item" style={{ paddingBottom: "10px" }}>
-                                                    <div className="circle-dot"></div>
+                                                    <div className="circle-dot-initial"></div>
                                                     <div className="timeline-date-place">
                                                         <h3 className="timeline-date">
                                                             <i className="bi bi-calendar-check-fill time-line-icon"></i> Jan '22 - Present
