@@ -10,7 +10,7 @@ const AsideNavbar = (props) => {
             <div className="aside-main-container">
                 <div className="aside-logo">
                     <a href="#">
-                        <img src={require("../../assets/images/light-theme-logo.png")} alt="logo-img" className="logo-icon" />
+                        <img src={require("../../assets/images/download.jpg")} alt="logo-img" className="logo-icon" />
                     </a>
                 </div>
                 <div className="aside-toggle">

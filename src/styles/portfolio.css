@@ -144,7 +144,7 @@ h3.my-profession {
 }
 
 h3.my-profession span {
-    color: var(--skin-color);
+    color: var(--skin-color);   
 }
 
 .home .home-info p {
@@ -170,6 +170,7 @@ h3.my-profession span {
     width: 250px;
     margin: auto;
     border-radius: 8px;
+    filter: drop-shadow(0 5px 5px rgb(116, 116, 116));
 }
 
 .dp-img::before {
@@ -177,8 +178,10 @@ h3.my-profession span {
     position: absolute;
     height: 70px;
     width: 160px;
+    border-left: 10px solid var(--skin-color-medium);
     border-top: 10px solid var(--skin-color);
-    border-left: 10px solid var(--skin-color);
+    /* border-top: 10px solid var(--skin-color); */
+    /* border-left: 10px solid var(--skin-color); */
     left: 20px;
     top: -40px;
 }
@@ -188,8 +191,10 @@ h3.my-profession span {
     position: absolute;
     height: 70px;
     width: 150px;
+    /* border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color); */
     border-bottom: 10px solid var(--skin-color);
-    border-right: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color-medium);
     right: 20px;
     bottom: -35px;
 }
@@ -505,7 +510,7 @@ h3.my-profession span {
     font-size: 16px;
 }
 
-.contact .contact-main-container .contact-details .contact-details-item p {
+.contact .contact-main-container .contact-details .contact-details-item a, p {
     color: var(--text-black-900);
     font-size: 15px;
     margin-bottom: 5px;

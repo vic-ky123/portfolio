@@ -14,6 +14,8 @@
   --text-black-700: #504e70;
   --pure-black: black;
   --skin-color: #2d0de0;
+  --skin-color-medium: rgb(103, 93, 240);
+  --danger: red; 
 }
 
 * {

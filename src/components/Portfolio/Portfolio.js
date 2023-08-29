@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../../styles/portfolio.css";
 import AsideNavbar from "../Navbar/AsideNavbar";
 import About from "../../pages/About";
+import Input from "../FormComponents/Input";
+import Form from "../FormComponents/Form";
 
 const Portfolio = () => {
 
@@ -67,10 +69,10 @@ const Portfolio = () => {
                         <div className="container">
                             <div className="row">
                                 <div className="home-info padd-15">
-                                    <h3 className="name-tag">Hello, I'm <span className="name">Vignesh Lokeshbabu</span></h3>
+                                    <h3 className="name-tag">Hello, I'm <span className="name">Kavya Suresh</span></h3>
                                     <div>
-                                        <h3 className="my-profession">I'm a <span className="typing">Frontend Developer</span></h3>
-                                        <p>I'm a web Designer with extensive experience for over 10 years. My expertise is to create and website design, graphic design, and many more...</p>
+                                        <h3 className="my-profession">I'm a <span className="typing">Business Analyst</span></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
                                     </div>
                                     <a
                                         href={require("../../assets/files/Vignesh_L_01.docx")}
@@ -81,7 +83,8 @@ const Portfolio = () => {
                                     >Resume</a>
                                 </div>
                                 <div className="dp-img padd-15">
-                                    <img src={require("../../assets/images/dark-theme-logo.png")} alt="display-pic" />
+                                    {/* <img src={require("../../assets/images/dark-theme-logo.png")} alt="display-pic" /> */}
+                                    <img src={require("../../assets/images/download.jpg")} alt="display-pic" />
                                 </div>
                             </div>
                         </div>
@@ -346,12 +349,12 @@ const Portfolio = () => {
                                         <div className="contact-details-item">
                                             <i className="bi bi-telephone-fill detail-icon" />
                                             <h4>on Call</h4>
-                                            <p>+91 9092137916</p>
+                                            <a href="tel:+6199942413">+91 9092137916</a>
                                         </div>
                                         <div className="contact-details-item">
                                             <i className="bi bi-envelope-fill detail-icon" />
                                             <h4>thru' E-mail</h4>
-                                            <p>vigneshlokeshbabu131@gmail.com</p>
+                                            <a href="mailto:vigneshlokeshbabu131@gmail.com">vigneshlokeshbabu131@gmail.com</a>
                                         </div>
                                         <div className="contact-details-item">
                                             <i className="bi bi-geo-alt-fill detail-icon" />
@@ -364,6 +367,9 @@ const Portfolio = () => {
                                     <div className="feel-free-contact">
                                         <h3>Get in-touch</h3>
                                         <p>Looking forward to reply to your message... : )</p>
+                                    </div>
+                                    <div>
+                                        <Form />
                                     </div>
                                     {/* <div className="contact-details">
                                         <div className="contact-details-item">
