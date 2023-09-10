@@ -349,12 +349,12 @@ const Portfolio = () => {
                                         <div className="contact-details-item">
                                             <i className="bi bi-telephone-fill detail-icon" />
                                             <h4>on Call</h4>
-                                            <a href="tel:+6199942413">+91 9092137916</a>
+                                            <p>+91 9092137916</p>
                                         </div>
                                         <div className="contact-details-item">
                                             <i className="bi bi-envelope-fill detail-icon" />
                                             <h4>thru' E-mail</h4>
-                                            <a href="mailto:vigneshlokeshbabu131@gmail.com">vigneshlokeshbabu131@gmail.com</a>
+                                            <p>vigneshlokeshbabu131@gmail.com</p>
                                         </div>
                                         <div className="contact-details-item">
                                             <i className="bi bi-geo-alt-fill detail-icon" />
@@ -366,7 +366,7 @@ const Portfolio = () => {
                                 <div>
                                     <div className="feel-free-contact">
                                         <h3>Get in-touch</h3>
-                                        <p>Looking forward to reply to your message... : )</p>
+                                        <p>Looking forward to reply to you... : )</p>
                                     </div>
                                     <div>
                                         <Form />

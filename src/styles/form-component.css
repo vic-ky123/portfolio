@@ -1,0 +1,44 @@
+/* CSS for Form component */
+
+.form-main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-name-email-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.name-container {
+    width: 100%;
+    margin-right: 5px;
+}
+
+.email-container {
+    width: 100%;
+    margin-left: 5px;
+}
+
+.submit-btn {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 7px 25px;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    white-space: nowrap;
+    border: none;
+    background: var(--skin-color);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 5px 5px var(--text-black-700));
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+}
