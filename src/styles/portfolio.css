@@ -2,12 +2,12 @@
 
 .portfolio-main-container {
     display: flex;
-    /* width: 100vw; */
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
     animation: initial-load 1s linear;
 }
 
@@ -23,18 +23,33 @@
 
 .section {
     background: var(--bg-black-900);
-    min-height: 100vh;
+    height: 100%;
+    width: 100%;
     display: block;
     opacity: 1;
     padding: 0 30px;
+    transform: translateX(0%);
+    animation: stack-screen 1s ease-in-out;
+    -webkit-animation: stack-screen 1s ease-in-out;
+}
+
+@keyframes stack-screen {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes stack-screen {
+    0% { -webkit-transform: translateX(-100%); }
+    100% { -webkit-transform: translateX(0%); }
 }
 
 .main-content-section {
-    padding-left: 270px;
+    margin-left: 270px;
 }
 
 .container {
-    max-width: 1100px;
+    /* max-width: 1100px; */
+    /* width: 100vw; */
     width: 100%;
     margin: auto;
 }
@@ -118,6 +133,8 @@
     min-height: 100vh;
     display: flex;
     color: var(--text-black-900);
+    /* animation: stack-screen 1s ease-in-out;
+    -webkit-animation: stack-screen 1s ease-in-out; */
 }
 
 .home .home-info {
@@ -235,6 +252,7 @@ h3.my-profession span {
     font-size: 15px;
     line-height: 25px;
     text-align: justify;
+    width: 100%;
 }
 
 .about .about-content .about-text p::first-letter {
@@ -338,7 +356,7 @@ h3.my-profession span {
 }
 
 .about .about-content .edu-exp-section .edu-exp-section-item .edu-exp-container .timeline-item {
-    border-left: 3px solid var(--skin-color);
+    border-left: 3.5px solid var(--skin-color);
     padding-left: 15px;
     padding-bottom: 35px;
 }
@@ -347,7 +365,7 @@ h3.my-profession span {
     height: 13px;
     width: 13px;
     background-color: var(--skin-color);
-    margin-left: -22.5px;
+    margin-left: -23px;
     border-radius: 50px;
     position: absolute;
     margin-top: 5px;
@@ -367,7 +385,7 @@ h3.my-profession span {
     height: 13px;
     width: 13px;
     background-color: var(--skin-color);
-    margin-left: -22.5px;
+    margin-left: -23px;
     border-radius: 50px;
     position: absolute;
     margin-top: 5px;

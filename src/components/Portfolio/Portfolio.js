@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/portfolio.css";
 import AsideNavbar from "../Navbar/AsideNavbar";
-import About from "../../pages/About";
-import Input from "../FormComponents/Input";
 import Form from "../FormComponents/Form";
 
 const Portfolio = () => {
 
     const [currItem, setCurrItem] = useState("");
+    const [show, setShow] = useState(null);
 
     useEffect(() => {
         setCurrItem("Home");
+        setShow(true);
     }, []);
 
     const menuData = [
@@ -46,14 +46,6 @@ const Portfolio = () => {
         }
     ];
 
-    // const setActive = (menuItem) => {
-    //     menuData.map((item) => {
-    //         if (item.menuName === menuItem) {
-    //             setCurrItem(menuItem);
-    //         }
-    //     });
-    // };
-
     const setActive = (menuItem) => {
         menuData.map((item) => item.menuName === menuItem ? setCurrItem(menuItem) : null);
     };
@@ -63,9 +55,8 @@ const Portfolio = () => {
             <div className="portfolio-main-container">
                 <AsideNavbar data={menuData} setActive={setActive} currItem={currItem} />
                 <div className="main-content-section">
-
                     {/* ******** Home Section Starts ******** */}
-                    <section id="home" className="home section">
+                    <section id="home" className={currItem === "Home" ? "home section" : "hidden"}>
                         <div className="container">
                             <div className="row">
                                 <div className="home-info padd-15">
@@ -83,8 +74,8 @@ const Portfolio = () => {
                                     >Resume</a>
                                 </div>
                                 <div className="dp-img padd-15">
-                                    {/* <img src={require("../../assets/images/dark-theme-logo.png")} alt="display-pic" /> */}
-                                    <img src={require("../../assets/images/download.jpg")} alt="display-pic" />
+                                    <img src={require("../../assets/images/dark-theme-logo.png")} alt="display-pic" />
+                                    {/* <img src={require("../../assets/images/download.jpg")} alt="display-pic" /> */}
                                 </div>
                             </div>
                         </div>
@@ -92,7 +83,7 @@ const Portfolio = () => {
                     {/* ******** Home Section Ends ******** */}
 
                     {/* ******** About Section Starts ******** */}
-                    <section id="about" className="about section">
+                    <section id="about" className={currItem === "About" ? "about section" : "about section hidden"}>
                         <div className="container">
                             <div className="row">
                                 <div className="section-title padd-15">
@@ -155,8 +146,8 @@ const Portfolio = () => {
                                             <h3>Education</h3>
                                             <div className="edu-exp-container">
                                                 <div className="timeline-item">
-                                                    <div className="circle-dot-initial"></div>
-                                                    <div className="timeline-date-place">
+                                                    <div className="circle-dot-initial" style={{ top: "25px" }}></div>
+                                                    <div className="timeline-date-place" style={{ marginTop: "-5px" }}>
                                                         <h3 className="timeline-date">
                                                             <i className="bi bi-calendar-check-fill time-line-icon"></i> 2019 - 2021
                                                         </h3>
@@ -248,8 +239,8 @@ const Portfolio = () => {
                                             <h3>Experience</h3>
                                             <div className="edu-exp-container">
                                                 <div className="timeline-item" style={{ paddingBottom: "10px" }}>
-                                                    <div className="circle-dot-initial"></div>
-                                                    <div className="timeline-date-place">
+                                                    <div className="circle-dot-initial" style={{ top: "25px" }}></div>
+                                                    <div className="timeline-date-place" style={{ marginTop: "-5px" }}>
                                                         <h3 className="timeline-date">
                                                             <i className="bi bi-calendar-check-fill time-line-icon"></i> Jan '22 - Present
                                                         </h3>
@@ -332,7 +323,7 @@ const Portfolio = () => {
                     </section> */}
 
                     {/* ******** Contact Section Starts ******** */}
-                    <section id="contact" className="contact section">
+                    <section id="contact" className={currItem === "Contact" ? "contact section" : "contact section hidden"}>
                         <div className="container">
                             <div className="row">
                                 <div className="section-title">

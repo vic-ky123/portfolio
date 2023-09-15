@@ -1,7 +1,7 @@
 /* CSS for Aside Navbar component */
 
 .aside-main-container {
-    width: 270px;
+    width: 270px !important; 
     background-color: var(--bg-black-100);
     position: fixed;
     left: 0;
@@ -78,4 +78,28 @@
 
 .aside-icon-class {
     margin-right: 15px;
+}
+
+/* ******** Media Query ******** */
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+    .aside-main-container {
+        width: 270px;
+        background-color: var(--bg-black-100);
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        border-right: 1px solid var(--bg-black-50);
+    }
+    
+    .aside-toggle {
+        display: block;
+    }
 }

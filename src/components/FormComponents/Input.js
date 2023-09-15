@@ -9,8 +9,8 @@ const Input = (props) => {
         <>
             <div className="main-input-container">
                 <div className="input-container">
-                    <input required type={type} value={value} name={name} onChange={onChange} onFocus={onFocus} onBlur={onBlur} style={{ borderColor: errorMsg ? "red" : "" }} />
-                    <label className="label" style={{ borderRightColor: errorMsg ? "red" : "", borderLeftColor: errorMsg ? "red" : "", color: errorMsg ? "red" : "" }}>{label}</label>
+                    <input required type={type} value={value} name={name} onChange={onChange} onFocus={onFocus} onBlur={onBlur} style={{ borderColor: !valid && errorMsg ? "red" : "" }} />
+                    <label className="label" style={{ borderRightColor: !valid && errorMsg ? "red" : "", borderLeftColor: !valid && errorMsg ? "red" : "", color: !valid && errorMsg ? "red" : "" }}>{label}</label>
                 </div>
                 <p className="errorMsgStyle">{errorMsg || ""}</p>
             </div>

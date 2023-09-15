@@ -1,9 +1,14 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useRef } from 'react';
 import Input from './Input';
 import TextArea from './TextArea';
 import "../../styles/form-component.css";
+import emailjs from '@emailjs/browser';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const Form = () => {
+
+    const form = useRef();
 
     const initialState = {
         formData: {
@@ -54,18 +59,17 @@ const Form = () => {
     const handleChange = (e) => {
 
         const updatedState = data;
-
         let controlName = updatedState.formData;
         let val = e.target.value;
         let name = e.target.name;
 
+        val = val.trimStart();
+
         if (controlName[name].validationRules.isRequired) {
             if (val === null || val === "") {
                 controlName[name].errMsg = "Required";
-                controlName[name].valid = false;
             } else {
                 controlName[name].errMsg = "";
-                controlName[name].valid = true;
             }
         }
 
@@ -78,29 +82,113 @@ const Form = () => {
         }
 
         controlName[name].value = val;
-        controlName[name].valid = true;
+        if (controlName[name].errMsg) {
+            controlName[name].valid = false;
+        } else {
+            controlName[name].valid = true;
+        }
 
         updatedState["formData"] = controlName;
         dispatch({ type: "UPDATE_STATE", payload: updatedState });
     };
 
     const onSubmit = (e) => {
-        console.log("Clicked on Submit...!");
+        e.preventDefault();
+
+        const updatedState = data;
+        let controlName = updatedState.formData;
+
+        if ((controlName.name.value === "" || controlName.name.value === null) || (controlName.email.value === "" || controlName.email.value === null) || (controlName.message.value === "" || controlName.message.value === null)) {
+            if (controlName.name.value === "" || controlName.name.value === null) {
+                controlName.name.errMsg = "Required";
+            } else {
+                controlName.name.errMsg = "";
+            }
+
+            if (controlName.email.value === "" || controlName.email.value === null) {
+                controlName.email.errMsg = "Required";
+            } else {
+                controlName.email.errMsg = "";
+            }
+
+            if (controlName.message.value === "" || controlName.message.value === null) {
+                controlName.message.errMsg = "Required";
+            } else {
+                controlName.message.errMsg = "";
+            }
+
+            updatedState["formData"] = controlName;
+            dispatch({ type: "UPDATE_STATE", payload: updatedState });
+        } else {
+            updatedState["formData"] = controlName;
+            dispatch({ type: "UPDATE_STATE", payload: updatedState });
+
+            const sendMessage = emailjs.sendForm('service_8qvymgo', 'template_l4whudj', form.current, 'J1tHtPzehxdiQ9MBf')
+                .then(() => { dispatch({ type: "RESET_STATE", payload: initialState }) });
+
+            toast.promise(
+                sendMessage,
+                {
+                    pending: {
+                        render() {
+                            return 'Sending... 📮'
+                        },
+                        icon: true,
+                        position: toast.POSITION.TOP_RIGHT,
+                        closeOnClick: false,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: "light",
+                        autoClose: 2000
+                    },
+                    success: {
+                        render() {
+                            return 'Message sent successfully 🥳'
+                        },
+                        icon: true,
+                        position: toast.POSITION.TOP_RIGHT,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        theme: "light",
+                        autoClose: 2000
+                    },
+                    error: {
+                        render() {
+                            return 'Sorry, some technical issue, please try again later 😞'
+                        },
+                        icon: true,
+                        position: toast.POSITION.TOP_RIGHT,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        theme: "light",
+                        autoClose: 2000
+                    }
+                }
+            );
+        }
     };
 
     return (
         <>
             <div className="form-main-container">
-                <div className="form-name-email-section">
-                    <div className="name-container">
-                        <Input type="text" label="Name" name="name" value={data.formData.name.value} errorMsg={data.formData.name.errMsg} valid={data.formData.name.valid} onChange={(e) => handleChange(e)} />
+            {/* <form ref={form} onSubmit={onSubmit} noValidate={true}> */}
+                <div className="form-main-container">
+                    <div className="form-name-email-section">
+                        <div className="name-container">
+                            <Input type="text" label="Name" name="name" value={data.formData.name.value} errorMsg={data.formData.name.errMsg} valid={data.formData.name.valid} onChange={(e) => handleChange(e)} />
+                        </div>
+                        <div className="email-container">
+                            <Input type="text" label="Email ID" name="email" value={data.formData.email.value} errorMsg={data.formData.email.errMsg} valid={data.formData.email.valid} onChange={(e) => handleChange(e)} />
+                        </div>
                     </div>
-                    <div className="email-container">
-                        <Input type="text" label="Email ID" name="email" value={data.formData.email.value} errorMsg={data.formData.email.errMsg} valid={data.formData.email.valid} onChange={(e) => handleChange(e)} />
-                    </div>
+                    <TextArea label="Message" name="message" value={data.formData.message.value} errorMsg={data.formData.message.errMsg} valid={data.formData.message.valid} onChange={(e) => handleChange(e)} />
+                    <button type="submit" className="submit-btn">Submit</button>
+                    {/* <button type="submit" className="submit-btn" onClick={(e) => onSubmit(e)}>Submit</button> */}
                 </div>
-                <TextArea label="Message" name="message" value={data.formData.message.value} errorMsg={data.formData.message.errMsg} valid={data.formData.message.valid} onChange={(e) => handleChange(e)} />
-                <button className="submit-btn" onClick={(e) => onSubmit(e)}>Submit</button>
+            {/* </form> */}
+            {/* <ToastContainer /> */}
             </div>
         </>
     )
