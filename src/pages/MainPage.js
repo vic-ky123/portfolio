@@ -14,17 +14,16 @@ const MainPage = () => {
 
     return (
         <>
-            <div className="main-page-main-container">
-                {
-                    showSpinner ?
-                        <>
+            {
+                showSpinner ?
+                    <>
+                        <div className="spinner-container">
                             <img src={require("../assets/images/spinner.gif")} alt="spinner" className="spinner-style" />
-                        </>
-                        :
+                        </div>
+                    </>
+                    :
                     <Portfolio />
-                }
-
-            </div>
+            }
         </>
     )
 };

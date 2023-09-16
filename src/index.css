@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 8 version
+*/
+
 /* Contains the CSS for the Index file */
 
 @import url('https://fonts.googleapis.com/css?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap');
@@ -21,7 +28,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-decoration: none;
   outline: none;
   white-space: initial;
@@ -29,27 +37,21 @@
 
 html {
   scroll-behavior: smooth;
-  /* white-space: nowrap; */
-  display: flex;
 }
 
 body {
   line-height: 1.5;
   font-size: 1rem;
-  user-select: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 0;
   font-family: 'Ubuntu', sans-serif;
 }
 
 ::before,
 ::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }

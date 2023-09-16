@@ -1,14 +1,31 @@
 /* CSS for Portfolio component */
 
 .portfolio-main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    position: absolute;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
+    /* position: absolute; */
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /* flex-direction: row; */
     width: 100%;
     height: 100%;
+    -webkit-animation: initial-load 1s linear;
     animation: initial-load 1s linear;
+}
+
+@-webkit-keyframes initial-load {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes initial-load {
@@ -27,29 +44,44 @@
     width: 100%;
     display: block;
     opacity: 1;
+    left: 0%;
     padding: 0 30px;
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
     transform: translateX(0%);
     animation: stack-screen 1s ease-in-out;
     -webkit-animation: stack-screen 1s ease-in-out;
 }
 
 @keyframes stack-screen {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(0%); }
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
 }
 
 @-webkit-keyframes stack-screen {
-    0% { -webkit-transform: translateX(-100%); }
-    100% { -webkit-transform: translateX(0%); }
+    0% {
+        -webkit-transform: translateX(-100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+    }
 }
 
 .main-content-section {
-    margin-left: 270px;
+    padding-left: 270px;
+    display: block;
+    overflow: hidden;
 }
 
 .container {
-    /* max-width: 1100px; */
-    /* width: 100vw; */
     width: 100%;
     margin: auto;
 }
@@ -60,6 +92,8 @@
 }
 
 .section-title {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 60px;
@@ -97,10 +131,16 @@
     padding: 0 15px;
 }
 
-.row {
+.rowWarps {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 0 15px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
     position: relative;
 }
@@ -108,18 +148,26 @@
 .btn {
     font-size: 15px;
     font-weight: 500;
-    padding: 7px 25px;
+    padding: 13px 25px;
     color: white;
-    border-radius: 12px;
+    border-radius: 6px;
     display: inline-block;
     white-space: nowrap;
     border: none;
     background: var(--skin-color);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    -webkit-filter: drop-shadow(0 5px 5px var(--text-black-700));
     filter: drop-shadow(0 5px 5px var(--text-black-700));
+    max-width: 150px;
+    width: 100%;
+    text-align: center;
 }
 
 .btn:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
 
@@ -131,16 +179,26 @@
 
 .home {
     min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: var(--text-black-900);
     /* animation: stack-screen 1s ease-in-out;
     -webkit-animation: stack-screen 1s ease-in-out; */
 }
 
-.home .home-info {
-    flex: 0 0 60%;
+.banner_leftCol {
+    -ms-flex-preferred-size: 60%;
+    flex-basis: 60%;
     max-width: 60%;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
+}
+
+.home .home-info {
+    display: block;
+    width: 100%;
 }
 
 h3.name-tag {
@@ -161,7 +219,7 @@ h3.my-profession {
 }
 
 h3.my-profession span {
-    color: var(--skin-color);   
+    color: var(--skin-color);
 }
 
 .home .home-info p {
@@ -173,20 +231,82 @@ h3.my-profession span {
 
 .btn_resume {
     margin-top: -30px;
+    margin-right: 10px;
+    line-height: 20px;
 }
 
-.home .dp-img {
-    flex: 0 0 40%;
+.btn_contact {
+    margin-left: 10px;
+    background-color: var(--bg-black-100);
+    color: var(--text-black-900);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.home .Banner_RytCol {
+    -ms-flex-preferred-size: 40%;
+    flex-basis: 40%;
     max-width: 40%;
+
+}
+
+.profileImgWrap {
     position: relative;
     text-align: center;
+    padding-top: 300px;
+    display: block;
+    width: 100%;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
 }
+
+.profileImgWrap img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+
+.profileImgWrap::before {
+    content: '';
+    position: absolute;
+    height: 70px;
+    max-width: 160px;
+    width: 100%;
+    border-left: 10px solid var(--skin-color-medium);
+    border-top: 10px solid var(--skin-color);
+    /* border-top: 10px solid var(--skin-color); */
+    /* border-left: 10px solid var(--skin-color); */
+    left: -19px;
+    top: -19px;
+}
+
+
+.profileImgWrap::after {
+    content: '';
+    position: absolute;
+    height: 70px;
+    max-width: 160px;
+    width: 100%;
+    /* border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color); */
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color-medium);
+    right: -19px;
+    bottom: -19px;
+}
+
 
 .home .dp-img img {
     height: 300px;
     width: 250px;
     margin: auto;
     border-radius: 8px;
+    -webkit-filter: drop-shadow(0 5px 5px rgb(116, 116, 116));
     filter: drop-shadow(0 5px 5px rgb(116, 116, 116));
 }
 
@@ -220,16 +340,22 @@ h3.my-profession span {
 
 .about {
     min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: var(--text-black-900);
 }
 
 .about .about-content {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
 }
 
 .about .about-content .about-text {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
 }
@@ -260,19 +386,37 @@ h3.my-profession span {
 }
 
 .personal-info-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 20px;
     margin-top: 5px;
 }
 
 .about .about-content .personal-info-section .personal-info {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -297,12 +441,23 @@ h3.my-profession span {
 
 .about .about-content .resume-contact-btn-section {
     max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-left: 20px;
     margin-bottom: 10px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     padding: 10px;
 }
@@ -321,20 +476,40 @@ h3.my-profession span {
 }
 
 .edu-exp-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     padding: 20px;
     margin-top: 5px;
 }
 
 .about .about-content .edu-exp-section edu-exp-section-item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -350,6 +525,7 @@ h3.my-profession span {
     background-color: var(--bg-black-100);
     padding: 30px 20px;
     border-radius: 10px;
+    -webkit-filter: drop-shadow(0 0 0.75rem var(--bg-black-200));
     filter: drop-shadow(0 0 0.75rem var(--bg-black-200));
     border: 1px solid var(--bg-black-150);
     position: relative;
@@ -418,11 +594,22 @@ h3.my-profession span {
 }
 
 .about .about-content .edu-exp-section .edu-exp-section-item .timeline-item .edu-details {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding-left: 0px;
 }
@@ -451,16 +638,24 @@ h3.my-profession span {
 /* ******** Contact Section ******** */
 
 .contact {
+    /* height: 100vh; */
+    /* display: flex; */
+    /* color: var(--text-black-900); */
+    /* min-width: 1096px; */
+    /* width: 100%; */
+    /* margin: 0 auto; */
+    /* background-color: red; */
+
     min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: var(--text-black-900);
-    /* min-width: 1096px; */
-    width: 100%;
-    margin: 0 auto;
-    /* background-color: red; */
 }
 
 .contact .contact-content {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
 
@@ -471,19 +666,39 @@ h3.my-profession span {
 }
 
 .contact .contact-main-container {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     /* width: 1030px; */
 }
 
 .contact .contact-main-container .feel-free-contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 10px 20px;
 }
@@ -501,17 +716,34 @@ h3.my-profession span {
 }
 
 .contact .contact-main-container .contact-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 10px 20px;
 }
 
 .contact .contact-main-container .contact-details .contact-details-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 10px 30px;
     margin: 0 10px;
@@ -528,8 +760,84 @@ h3.my-profession span {
     font-size: 16px;
 }
 
-.contact .contact-main-container .contact-details .contact-details-item a, p {
+.contact .contact-main-container .contact-details .contact-details-item a,
+p {
     color: var(--text-black-900);
     font-size: 15px;
     margin-bottom: 5px;
+}
+
+/* all media quaries below */
+
+@media(max-width:767px) {
+    .rowWarps {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-orient: vertical !important;
+        -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+    }
+
+    .banner_leftCol {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .home .Banner_RytCol {
+        padding-top: 90px;
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .home .dp-img {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .section {
+        padding: 0px 10px;
+    }
+
+    .main-content-section {
+        padding-left: 0px;
+    }
+
+    h3.name-tag span {
+        font-size: 33px;
+        line-height: 26px;
+    }
+
+    .home .home-info p {
+        margin-bottom: 30px;
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .btn_resume {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        margin: 0px 0px 20px;
+    }
+
+    .btn_contact {
+        margin-left: 0px;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+    }
+
+    .about {
+        padding-top: 20px;
+    }
+}
+
+@media(max-width:580px) {
+    .section .container {
+        padding: 40px 0px;
+    }
 }

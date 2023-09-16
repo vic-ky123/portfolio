@@ -1,9 +1,11 @@
 /* Contains CSS for Main Page component */
 
-.main-page-main-container {
+.spinner-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .spinner-style {

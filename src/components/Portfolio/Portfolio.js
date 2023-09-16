@@ -50,6 +50,10 @@ const Portfolio = () => {
         menuData.map((item) => item.menuName === menuItem ? setCurrItem(menuItem) : null);
     };
 
+    const btnNav = (menuItem) => {
+        menuData.map((item) => item.menuName === menuItem ? setCurrItem(menuItem) : null);
+    };
+
     return (
         <>
             <div className="portfolio-main-container">
@@ -58,24 +62,33 @@ const Portfolio = () => {
                     {/* ******** Home Section Starts ******** */}
                     <section id="home" className={currItem === "Home" ? "home section" : "hidden"}>
                         <div className="container">
-                            <div className="row">
-                                <div className="home-info padd-15">
-                                    <h3 className="name-tag">Hello, I'm <span className="name">Kavya Suresh</span></h3>
-                                    <div>
-                                        <h3 className="my-profession">I'm a <span className="typing">Business Analyst</span></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                            <div className="rowWarps">
+                                <div class="banner_leftCol">
+                                    <div className="home-info padd-15">
+                                        <h3 className="name-tag">Hello, I'm <span className="name">Vignesh Lokeshbabu</span></h3>
+                                        <div>
+                                            <h3 className="my-profession">I'm a <span className="typing">Business Analyst</span></h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                                        </div>
+                                        <a
+                                            href={require("../../assets/files/Vignesh_L_01.docx")}
+                                            className="btn btn_resume"
+                                            download="Example-PDF-document"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >Resume</a>
+                                        <button
+                                            onClick={() => btnNav("Contact")}
+                                            className="btn btn_contact"
+                                        >Contact</button>
                                     </div>
-                                    <a
-                                        href={require("../../assets/files/Vignesh_L_01.docx")}
-                                        className="btn btn_resume"
-                                        download="Example-PDF-document"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >Resume</a>
                                 </div>
-                                <div className="dp-img padd-15">
+
+                                <div className="Banner_RytCol padd-15">
+                                    <div className="profileImgWrap">
                                     <img src={require("../../assets/images/dark-theme-logo.png")} alt="display-pic" />
-                                    {/* <img src={require("../../assets/images/download.jpg")} alt="display-pic" /> */}
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +96,7 @@ const Portfolio = () => {
                     {/* ******** Home Section Ends ******** */}
 
                     {/* ******** About Section Starts ******** */}
-                    <section id="about" className={currItem === "About" ? "about section" : "about section hidden"}>
+                    <section id="about" className={currItem === "About" ? "about section" : "hidden"}>
                         <div className="container">
                             <div className="row">
                                 <div className="section-title padd-15">
@@ -137,7 +150,7 @@ const Portfolio = () => {
                                             rel="noreferrer"
                                         >Resume</a>
                                         <button
-                                            onClick={() => console.log("Contact button clicked...!!!")}
+                                            onClick={() => btnNav("Contact")}
                                             className="btn contact-btn"
                                         >Contact</button>
                                     </div>
@@ -323,7 +336,7 @@ const Portfolio = () => {
                     </section> */}
 
                     {/* ******** Contact Section Starts ******** */}
-                    <section id="contact" className={currItem === "Contact" ? "contact section" : "contact section hidden"}>
+                    <section id="contact" className={currItem === "Contact" ? "contact section" : "hidden"}>
                         <div className="container">
                             <div className="row">
                                 <div className="section-title">

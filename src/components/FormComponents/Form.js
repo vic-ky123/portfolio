@@ -173,7 +173,7 @@ const Form = () => {
     return (
         <>
             <div className="form-main-container">
-            {/* <form ref={form} onSubmit={onSubmit} noValidate={true}> */}
+            <form ref={form} onSubmit={onSubmit} noValidate={true}>
                 <div className="form-main-container">
                     <div className="form-name-email-section">
                         <div className="name-container">
@@ -185,10 +185,10 @@ const Form = () => {
                     </div>
                     <TextArea label="Message" name="message" value={data.formData.message.value} errorMsg={data.formData.message.errMsg} valid={data.formData.message.valid} onChange={(e) => handleChange(e)} />
                     <button type="submit" className="submit-btn">Submit</button>
-                    {/* <button type="submit" className="submit-btn" onClick={(e) => onSubmit(e)}>Submit</button> */}
+                    {/* <button type="submit" className="submit-btn" onClick={(e) => onSubmit(e)} formNoValidate={true}>Submit</button> */}
                 </div>
-            {/* </form> */}
-            {/* <ToastContainer /> */}
+            </form>
+            <ToastContainer />
             </div>
         </>
     )
