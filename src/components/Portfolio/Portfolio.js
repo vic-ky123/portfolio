@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 import "../../styles/portfolio.css";
 import AsideNavbar from "../Navbar/AsideNavbar";
 import Form from "../FormComponents/Form";
+// import { TypeAnimation } from "react-type-animation";
+// import Typewriter from "typewriter-effect";
+// import { useTypewriter } from "react-simple-typewriter";
 
 const Portfolio = () => {
 
     const [currItem, setCurrItem] = useState("");
-    const [show, setShow] = useState(null);
+    // const [show, setShow] = useState(null);
 
     useEffect(() => {
         setCurrItem("Home");
-        setShow(true);
+        // setShow(true);
     }, []);
 
     const menuData = [
@@ -34,9 +37,9 @@ const Portfolio = () => {
         },
         {
             id: 4,
-            menuName: "Projects",
+            menuName: "My Works",
             menuIcon: "bi bi-file-earmark-code-fill",
-            menuLink: "#projects"
+            menuLink: "#myWorks"
         },
         {
             id: 5,
@@ -62,12 +65,12 @@ const Portfolio = () => {
                     {/* ******** Home Section Starts ******** */}
                     <section id="home" className={currItem === "Home" ? "home section" : "hidden"}>
                         <div className="container">
-                            <div className="rowWarps">
-                                <div class="banner_leftCol">
+                            <div className="row-wrapper">
+                                <div class="banner-left-col">
                                     <div className="home-info padd-15">
-                                        <h3 className="name-tag">Hello, I'm <span className="name">Vignesh Lokeshbabu</span></h3>
+                                        <h3 className="name-tag">Hello, I'm <span>Vignesh Lokeshbabu</span></h3>
                                         <div>
-                                            <h3 className="my-profession">I'm a <span className="typing">Business Analyst</span></h3>
+                                            <h3 className="my-profession">I'm a <span>Frontend Developer</span></h3>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
                                         </div>
                                         <a
@@ -83,11 +86,9 @@ const Portfolio = () => {
                                         >Contact</button>
                                     </div>
                                 </div>
-
-                                <div className="Banner_RytCol padd-15">
-                                    <div className="profileImgWrap">
-                                    <img src={require("../../assets/images/dark-theme-logo.png")} alt="display-pic" />
-
+                                <div className="banner-right-col padd-15">
+                                    <div className="profile-img-wrap">
+                                        <img src={require("../../assets/images/dark-theme-logo.png")} alt="display-pic" />
                                     </div>
                                 </div>
                             </div>
@@ -290,50 +291,25 @@ const Portfolio = () => {
                     </section>
                     {/* ******** About Section Ends ******** */}
 
-                    {/* <section id="skills">
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
-                        <p>skills</p>
+                    {/* ******** Skills Section Starts ******** */}
+                    <section id="myWorks" className={currItem === "Skills" ? "contact section" : "hidden"}>
+                        <div className="row">
+                            <div className="section-title">
+                                <h2>Skills</h2>
+                            </div>
+                        </div>
                     </section>
-                    <section id="projects">
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                        <p>projects</p>
-                    </section> */}
+                    {/* ******** Skills Section Ends ******** */}
+
+                    {/* ******** My Works Section Starts ******** */}
+                    <section id="myWorks" className={currItem === "My Works" ? "contact section" : "hidden"}>
+                        <div className="row">
+                            <div className="section-title">
+                                <h2>My Works</h2>
+                            </div>
+                        </div>
+                    </section>
+                    {/* ******** My Works Section Ends ******** */}
 
                     {/* ******** Contact Section Starts ******** */}
                     <section id="contact" className={currItem === "Contact" ? "contact section" : "hidden"}>
@@ -344,7 +320,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                             <div className="contact-main-container padd-15">
-                                <div style={{ marginBottom: "50px" }}>
+                                <div style={{ marginBottom: "20px" }}>
                                     <div className="feel-free-contact">
                                         <h3>Feel free to contact me</h3>
                                         <p>I'm available...</p>
@@ -353,7 +329,7 @@ const Portfolio = () => {
                                         <div className="contact-details-item">
                                             <i className="bi bi-telephone-fill detail-icon" />
                                             <h4>on Call</h4>
-                                            <p>+91 9092137916</p>
+                                            <a href="//api.whatsapp.com/send?phone=919092137916" target="_blank">+91 9092137916</a>
                                         </div>
                                         <div className="contact-details-item">
                                             <i className="bi bi-envelope-fill detail-icon" />
@@ -367,12 +343,32 @@ const Portfolio = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div style={{ marginBottom: "40px" }}>
+                                    <div className="feel-free-contact">
+                                        <h3>Also find me on</h3>
+                                        <p>the social media...</p>
+                                    </div>
+                                    <div className="social-media-container">
+                                        <div>
+                                            <i className="bi bi-linkedin linkedIn-icon" />
+                                            <a href="https://www.linkedin.com/in/vignesh-lokeshbabu" target="_blank">LinkedIn</a>
+                                        </div>
+                                        <div>
+                                            <i className="bi bi-github gitHub-icon" />
+                                            <a href="https://github.com/vic-ky123" target="_blank">GitHub</a>
+                                        </div>
+                                        <div>
+                                            <i className="bi bi-instagram instagram-icon" style={{ color: "radial-gradient(red, yellow)" }} />
+                                            <a href="https://www.instagram.com/_im_mr.melophile_/" target="_blank">Instagram</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="contact-get-in-touch-section">
                                     <div className="feel-free-contact">
                                         <h3>Get in-touch</h3>
                                         <p>Looking forward to reply to you... : )</p>
                                     </div>
-                                    <div>
+                                    <div className="form-section">
                                         <Form />
                                     </div>
                                     {/* <div className="contact-details">
