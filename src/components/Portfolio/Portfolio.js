@@ -69,7 +69,7 @@ const Portfolio = () => {
                                 <div class="banner-left-col">
                                     <div className="home-info padd-15">
                                         <h3 className="name-tag">Hello, I'm <span>Vignesh Lokeshbabu</span></h3>
-                                        <div>
+                                        <div className="home-intro">
                                             <h3 className="my-profession">I'm a <span>Frontend Developer</span></h3>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
                                         </div>
@@ -329,7 +329,7 @@ const Portfolio = () => {
                                         <div className="contact-details-item">
                                             <i className="bi bi-telephone-fill detail-icon" />
                                             <h4>on Call</h4>
-                                            <a href="//api.whatsapp.com/send?phone=919092137916" target="_blank">+91 9092137916</a>
+                                            <a href="//api.whatsapp.com/send?phone=919092137916" target="_blank" rel="noreferrer">+91 9092137916</a>
                                         </div>
                                         <div className="contact-details-item">
                                             <i className="bi bi-envelope-fill detail-icon" />
@@ -343,24 +343,24 @@ const Portfolio = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div style={{ marginBottom: "40px" }}>
+                                <div className="social-media-section">
                                     <div className="feel-free-contact">
                                         <h3>Also find me on</h3>
                                         <p>the social media...</p>
                                     </div>
                                     <div className="social-media-container">
-                                        <div>
-                                            <i className="bi bi-linkedin linkedIn-icon" />
-                                            <a href="https://www.linkedin.com/in/vignesh-lokeshbabu" target="_blank">LinkedIn</a>
-                                        </div>
-                                        <div>
-                                            <i className="bi bi-github gitHub-icon" />
-                                            <a href="https://github.com/vic-ky123" target="_blank">GitHub</a>
-                                        </div>
-                                        <div>
-                                            <i className="bi bi-instagram instagram-icon" style={{ color: "radial-gradient(red, yellow)" }} />
-                                            <a href="https://www.instagram.com/_im_mr.melophile_/" target="_blank">Instagram</a>
-                                        </div>
+                                        <p className="social-media-item">
+                                            <span><i className="bi bi-linkedin linkedIn-icon" /></span>
+                                            <span><a href="https://www.linkedin.com/in/vignesh-lokeshbabu" target="_blank" rel="noreferrer">vignesh-lokeshbabu</a></span>
+                                        </p>
+                                        <p className="social-media-item">
+                                            <span><i className="bi bi-github gitHub-icon" /></span>
+                                            <span><a href="https://github.com/vic-ky123" target="_blank" rel="noreferrer">vic-ky123</a></span>
+                                        </p>
+                                        <p className="social-media-item">
+                                            <span><i className="bi bi-instagram instagram-icon" style={{ color: "radial-gradient(red, yellow)" }} /></span>
+                                            <span><a href="https://www.instagram.com/_im_mr.melophile_/" target="_blank" rel="noreferrer">_im_mr.melophile_</a></span>
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="contact-get-in-touch-section">

@@ -1,15 +1,6 @@
 /* CSS for Portfolio component */
 
 .portfolio-main-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: flex-start;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
     width: 100%;
     height: 100%;
     -webkit-animation: initial-load 1s linear;
@@ -201,8 +192,8 @@
 }
 
 h3.name-tag {
-    font-size: 25px;
-    margin: 15px 0;
+    font-size: 23px;
+    /* margin: 15px 0; */
 }
 
 h3.name-tag span {
@@ -212,9 +203,14 @@ h3.name-tag span {
     font-family: 'Stylish', sans-serif;
 }
 
+.home .home-info .home-intro {
+    margin: 10px 0 40px 0;
+}
+
 h3.my-profession {
-    font-size: 24px;
-    margin: 30px 0 10px 0;
+    font-size: 20px;
+    /* margin: 0 0 10px 0; */
+    margin-bottom: 10px;
 }
 
 h3.my-profession span {
@@ -223,9 +219,10 @@ h3.my-profession span {
     font-family: 'Stylish', sans-serif;
 }
 
-.home .home-info p {
-    margin-bottom: 70px;
+.home .home-info .home-intro p {
+    /* margin-bottom: 70px; */
     font-size: 15px;
+    margin-top: -10px;
     color: var(--text-black-700);
     line-height: 25px;
 }
@@ -639,6 +636,7 @@ h3.my-profession span {
     -ms-flex-align: center;
     align-items: center;
     padding: 10px 20px;
+    flex-wrap: wrap;
 }
 
 .contact .contact-main-container .contact-details .contact-details-item {
@@ -679,6 +677,7 @@ p {
 
 .contact-get-in-touch-section {
     width: 100%;
+    margin-top: 0px;
 }
 
 .contact .contact-main-container .feel-free-contact {
@@ -717,13 +716,45 @@ p {
     font-size: 14.5px;
 }
 
-.contact .contact-main-container .social-media-container {
+.contact .contact-main-container .social-media-section {
+    width: 100%;
+    height: 250px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 20px;
     flex-direction: column;
-    margin-top: 40px;
+}
+
+.contact .contact-main-container .social-media-section .social-media-container {
+    height: 20px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.contact .contact-main-container .social-media-container .social-media-item {
+    font-size: 15px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact .contact-main-container .social-media-container .social-media-item span:nth-child(1) {
+    width: 50px;
+    float: left;
+}
+
+.contact .contact-main-container .social-media-container .social-media-item span:nth-child(1) i {
+   font-size: 22px;
+   color: var(--skin-color);
+}
+
+.contact .contact-main-container .social-media-container .social-media-item span:nth-child(2) {
+    width: 150px;
+    float: right;
+}
+
+.contact .contact-main-container .social-media-container .social-media-item span:nth-child(2) a {
+    color: var(--text-black-900);
+    font-size: 15px;
 }
 
 .contact .contact-main-container .form-section {
@@ -732,7 +763,7 @@ p {
 }
 
 .linkedIn-icon {
-    color: "#0077B5"; 
+    color: "#0077B5";
 }
 
 .gitHub-icon {
