@@ -1,0 +1,66 @@
+/* CSS for Skills Web View component */
+
+.skills-main-container {
+    max-width: 100%;
+    flex-basis: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.skills-main-container .skills-holder {
+    max-width: 70%;
+    flex-basis: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-main-container .skills-holder .skills-left-section {
+    width: 50%;
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+.skills-main-container .skills-holder .skills-left-section .skills-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 15px 0;
+}
+
+.skills-item-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.skills-item-desc i {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.skills-item-desc .skills-item p {
+    margin-bottom: -10px;
+    color: var(--skin-color);
+    font-family: 'Stylish', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: -4px;
+}
+
+.skills-item-desc .skills-item span {
+    font-size: 13px;
+}
+
+.skills-main-container .skills-holder .skills-right-section {
+    width: 50%;
+    flex-basis: 50%;
+    padding: 10px;
+}

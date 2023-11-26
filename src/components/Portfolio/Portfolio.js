@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import "../../styles/portfolio.css";
 import AsideNavbar from "../Navbar/AsideNavbar";
 import Form from "../FormComponents/Form";
+import { useMediaQuery } from "react-responsive";
+import SkillsWebView from "../MenuComponents/SkillsWebView";
+import SkillsMobileView from "../MenuComponents/SkillsMobileView";
 // import { TypeAnimation } from "react-type-animation";
 // import Typewriter from "typewriter-effect";
 // import { useTypewriter } from "react-simple-typewriter";
@@ -9,11 +12,10 @@ import Form from "../FormComponents/Form";
 const Portfolio = () => {
 
     const [currItem, setCurrItem] = useState("");
-    // const [show, setShow] = useState(null);
+    const isSmallScreen = useMediaQuery({ query: '(max-width: 768px)' });
 
     useEffect(() => {
         setCurrItem("Home");
-        // setShow(true);
     }, []);
 
     const menuData = [
@@ -53,10 +55,6 @@ const Portfolio = () => {
         menuData.map((item) => item.menuName === menuItem ? setCurrItem(menuItem) : null);
     };
 
-    const btnNav = (menuItem) => {
-        menuData.map((item) => item.menuName === menuItem ? setCurrItem(menuItem) : null);
-    };
-
     return (
         <>
             <div className="portfolio-main-container">
@@ -81,7 +79,7 @@ const Portfolio = () => {
                                             rel="noreferrer"
                                         >Resume</a>
                                         <button
-                                            onClick={() => btnNav("Contact")}
+                                            onClick={() => setActive("Contact")}
                                             className="btn btn_contact"
                                         >Contact</button>
                                     </div>
@@ -151,7 +149,7 @@ const Portfolio = () => {
                                             rel="noreferrer"
                                         >Resume</a>
                                         <button
-                                            onClick={() => btnNav("Contact")}
+                                            onClick={() => setActive("Contact")}
                                             className="btn contact-btn"
                                         >Contact</button>
                                     </div>
@@ -278,7 +276,7 @@ const Portfolio = () => {
                                                         </p>
                                                         <p>
                                                             <span>Experience</span>
-                                                            <span>1 year & 8 months</span>
+                                                            <span>1.5+ years</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -292,10 +290,17 @@ const Portfolio = () => {
                     {/* ******** About Section Ends ******** */}
 
                     {/* ******** Skills Section Starts ******** */}
-                    <section id="myWorks" className={currItem === "Skills" ? "contact section" : "hidden"}>
-                        <div className="row">
-                            <div className="section-title">
-                                <h2>Skills</h2>
+                    <section id="skills" className={currItem === "Skills" ? "skills section" : "hidden"}>
+                        <div className="container">
+                            <div className="row">
+                                <div className="section-title padd-15">
+                                    <h2>Skills</h2>
+                                </div>
+                            </div>
+                            <div className="row">
+                                {
+                                    isSmallScreen ? <SkillsMobileView /> : <SkillsWebView />
+                                }
                             </div>
                         </div>
                     </section>
@@ -304,7 +309,7 @@ const Portfolio = () => {
                     {/* ******** My Works Section Starts ******** */}
                     <section id="myWorks" className={currItem === "My Works" ? "contact section" : "hidden"}>
                         <div className="row">
-                            <div className="section-title">
+                            <div className="section-title padd-15">
                                 <h2>My Works</h2>
                             </div>
                         </div>
@@ -315,7 +320,7 @@ const Portfolio = () => {
                     <section id="contact" className={currItem === "Contact" ? "contact section" : "hidden"}>
                         <div className="container">
                             <div className="row">
-                                <div className="section-title">
+                                <div className="section-title padd-15">
                                     <h2>Contact Me</h2>
                                 </div>
                             </div>
@@ -371,34 +376,11 @@ const Portfolio = () => {
                                     <div className="form-section">
                                         <Form />
                                     </div>
-                                    {/* <div className="contact-details">
-                                        <div className="contact-details-item">
-                                            <i className="bi bi-telephone-fill detail-icon" />
-                                            <h4>on Call</h4>
-                                            <p>+91 9092137916</p>
-                                        </div>
-                                        <div className="contact-details-item">
-                                            <i className="bi bi-envelope-fill detail-icon" />
-                                            <h4>thru' E-mail</h4>
-                                            <p>vigneshlokeshbabu131@gmail.com</p>
-                                        </div>
-                                        <div className="contact-details-item">
-                                            <i className="bi bi-geo-alt-fill detail-icon" />
-                                            <h4>in City</h4>
-                                            <p>Chennai, India</p>
-                                        </div>
-                                        <div className="contact-details-item">
-                                            <i className="bi bi-geo-alt-fill detail-icon" />
-                                            <h4>in City</h4>
-                                            <p>Chennai, India</p>
-                                        </div>
-                                    </div> */}
                                 </div>
                             </div>
                         </div>
                     </section>
                     {/* ******** Contact Section Ends ******** */}
-
                 </div>
             </div>
         </>

@@ -589,6 +589,14 @@ h3.my-profession span {
 
 /* ******** Skills Section ******** */
 
+.skills {
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: var(--text-black-900);
+}
+
 /* ******** Projects Section ******** */
 
 /* ******** Contact Section ******** */
@@ -743,8 +751,8 @@ p {
 }
 
 .contact .contact-main-container .social-media-container .social-media-item span:nth-child(1) i {
-   font-size: 22px;
-   color: var(--skin-color);
+    font-size: 22px;
+    color: var(--skin-color);
 }
 
 .contact .contact-main-container .social-media-container .social-media-item span:nth-child(2) {
@@ -774,7 +782,7 @@ p {
     color: radial-gradient(red, yellow);
 }
 
-/* all media quaries below */
+/* ******** Media Query ******** */
 
 @media (max-width:767px) {
 
@@ -814,6 +822,12 @@ p {
 
     .main-content-section {
         padding-left: 0px;
+    }
+
+    h3.name-tag {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
     }
 
     h3.name-tag span {

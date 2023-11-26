@@ -9,8 +9,8 @@ const TextArea = (props) => {
         <>
             <div className="main-textarea-container">
                 <div className="textarea-container">
-                    <textarea rows={3} required value={value} name={name} onChange={onChange} onFocus={onFocus} onBlur={onBlur} style={{ borderColor: errorMsg ? "red" : "" }}></textarea>
-                    <label className="label" style={{ borderRightColor: errorMsg ? "red" : "", borderLeftColor: errorMsg ? "red" : "", color: errorMsg ? "red" : "" }}>{label}</label>
+                    <textarea rows={3} required value={value} name={name} onChange={onChange} onFocus={onFocus} onBlur={onBlur} style={{ borderColor: !valid && errorMsg ? "red" : "" }}></textarea>
+                    <label className="label" style={{ borderRightColor: !valid && errorMsg ? "red" : "", borderLeftColor: !valid && errorMsg ? "red" : "", color: !valid && errorMsg ? "red" : "" }}>{label}</label>
                 </div>
                 <p className="textarea-errorMsgStyle">{errorMsg || ""}</p>
             </div>

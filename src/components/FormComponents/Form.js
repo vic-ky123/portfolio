@@ -123,14 +123,16 @@ const Form = () => {
             updatedState["formData"] = controlName;
             dispatch({ type: "UPDATE_STATE", payload: updatedState });
 
-            const sendMessage = emailjs.sendForm('service_8qvymgo', 'template_l4whudj', form.current, 'J1tHtPzehxdiQ9MBf')
-                .then(() => { dispatch({ type: "RESET_STATE", payload: initialState }) });
+            const sendMessage = emailjs.sendForm('service_8qvymgo', 'template_l4whudj', form.current, 'c2_3VpPA_mM9gjbEw')
+                .then(() => { dispatch({ type: "RESET_STATE", payload: initialState }) })
+                .catch((error) => console.error('Error sending email:', error));
 
             toast.promise(
                 sendMessage,
                 {
                     pending: {
                         render() {
+                            console.log('Sending...');
                             return 'Sending... 📮'
                         },
                         icon: true,
@@ -139,7 +141,8 @@ const Form = () => {
                         pauseOnHover: false,
                         draggable: false,
                         theme: "light",
-                        autoClose: 2000
+                        autoClose: 2000,
+                        // zIndex: 1000
                     },
                     success: {
                         render() {
@@ -151,7 +154,8 @@ const Form = () => {
                         pauseOnHover: true,
                         draggable: true,
                         theme: "light",
-                        autoClose: 2000
+                        autoClose: 2000,
+                        // zIndex: 1000
                     },
                     error: {
                         render() {
@@ -163,7 +167,8 @@ const Form = () => {
                         pauseOnHover: true,
                         draggable: true,
                         theme: "light",
-                        autoClose: 2000
+                        autoClose: 2000,
+                        // zIndex: 1000
                     }
                 }
             );
@@ -173,22 +178,24 @@ const Form = () => {
     return (
         <>
             <div className="form-main-container">
-            <form ref={form} onSubmit={onSubmit} noValidate={true}>
-                <div className="form-main-container">
-                    <div className="form-name-email-section">
-                        <div className="name-container">
-                            <Input type="text" label="Name" name="name" value={data.formData.name.value} errorMsg={data.formData.name.errMsg} valid={data.formData.name.valid} onChange={(e) => handleChange(e)} />
+                <form ref={form} onSubmit={onSubmit} noValidate={true}>
+                    <div className="form-main-container">
+                        <div className="form-name-email-section">
+                            <div className="name-container">
+                                <Input type="text" label="Name" name="name" value={data.formData.name.value} errorMsg={data.formData.name.errMsg} valid={data.formData.name.valid} onChange={(e) => handleChange(e)} />
+                            </div>
+                            <div className="email-container">
+                                <Input type="text" label="Email ID" name="email" value={data.formData.email.value} errorMsg={data.formData.email.errMsg} valid={data.formData.email.valid} onChange={(e) => handleChange(e)} />
+                            </div>
                         </div>
-                        <div className="email-container">
-                            <Input type="text" label="Email ID" name="email" value={data.formData.email.value} errorMsg={data.formData.email.errMsg} valid={data.formData.email.valid} onChange={(e) => handleChange(e)} />
-                        </div>
+                        <TextArea label="Message" name="message" value={data.formData.message.value} errorMsg={data.formData.message.errMsg} valid={data.formData.message.valid} onChange={(e) => handleChange(e)} />
+                        <button type="submit" className="submit-btn">Submit</button>
+                        {/* <button type="submit" className="submit-btn" onClick={(e) => onSubmit(e)} formNoValidate={true}>Submit</button> */}
                     </div>
-                    <TextArea label="Message" name="message" value={data.formData.message.value} errorMsg={data.formData.message.errMsg} valid={data.formData.message.valid} onChange={(e) => handleChange(e)} />
-                    <button type="submit" className="submit-btn">Submit</button>
-                    {/* <button type="submit" className="submit-btn" onClick={(e) => onSubmit(e)} formNoValidate={true}>Submit</button> */}
+                </form>
+                <div className="toastify-container">
+                    <ToastContainer />
                 </div>
-            </form>
-            <ToastContainer />
             </div>
         </>
     )
