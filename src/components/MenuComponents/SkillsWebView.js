@@ -60,30 +60,41 @@ const SkillsWebView = () => {
                             })
                         }
                     </div>
-                    <div className="skills-right-section">
+                    <div className="skills-right-section" key={currItem}>
                         {(() => {
                             if (currItem === "basic") {
                                 return (
                                     <>
-                                        <div style={{ backgroundColor: "red" }}><p>Basic</p></div>
+                                        <div className="skills-data-container">
+                                            <p>Basic</p>
+                                            <p>Basic</p>
+                                            <p>Basic</p>
+                                            <p>Basic</p>
+                                            <p>Basic</p>
+                                            <p>Basic</p>
+                                            <p>Basic</p>
+                                            <p>Basic</p>
+                                            <p>Basic</p>
+                                            <p>Basic</p>
+                                        </div>
                                     </>
                                 )
                             } else if (currItem === "advanced") {
                                 return (
                                     <>
-                                        <p>Advanced</p>
+                                        <div className="skills-data-container"><p>Advanced</p></div>
                                     </>
                                 )
                             } else if (currItem === "uxui") {
                                 return (
                                     <>
-                                        <p>UX/UI</p>
+                                        <div className="skills-data-container"><p>UX/UI</p></div>
                                     </>
                                 )
                             } else if (currItem === "further") {
                                 return (
                                     <>
-                                        <p>Further</p>
+                                        <div className="skills-data-container"><p>Further</p></div>
                                     </>
                                 )
                             }

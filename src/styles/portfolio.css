@@ -858,4 +858,22 @@ p {
     .about {
         padding-top: 20px;
     }
+
+    .personal-info-section {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    .edu-exp-section {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .edu-exp-section-item {
+        margin: 0 10px 25px 10px;
+    }
 }

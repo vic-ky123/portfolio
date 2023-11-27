@@ -136,7 +136,7 @@ const Form = () => {
                             return 'Sending... 📮'
                         },
                         icon: true,
-                        position: toast.POSITION.TOP_RIGHT,
+                        position: toast.POSITION.BOTTOM_RIGHT,
                         closeOnClick: false,
                         pauseOnHover: false,
                         draggable: false,
@@ -149,7 +149,7 @@ const Form = () => {
                             return 'Message sent successfully 🥳'
                         },
                         icon: true,
-                        position: toast.POSITION.TOP_RIGHT,
+                        position: toast.POSITION.BOTTOM_RIGHT,
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
@@ -162,7 +162,7 @@ const Form = () => {
                             return 'Sorry, some technical issue, please try again later 😞'
                         },
                         icon: true,
-                        position: toast.POSITION.TOP_RIGHT,
+                        position: toast.POSITION.BOTTOM_RIGHT,
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
