@@ -1,5 +1,12 @@
 import React, { Fragment, useState } from "react";
 import "../../styles/skills-web-view.css";
+import {
+    CircularProgressbarWithChildren,
+    buildStyles
+} from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { easeQuadInOut } from "d3-ease";
+import AnimatedProgressProvider from "./AnimatedProgressProvider";
 
 const SkillsWebView = () => {
 
@@ -19,13 +26,13 @@ const SkillsWebView = () => {
             itemRef: "advanced"
         },
         {
-            id: 1,
+            id: 3,
             itemTitle: "UX/UI",
             itemHelperText: "the designing frameworks",
             itemRef: "uxui"
         },
         {
-            id: 1,
+            id: 4,
             itemTitle: "Furthermore",
             itemHelperText: "the additional skills",
             itemRef: "further"
@@ -66,35 +73,67 @@ const SkillsWebView = () => {
                                 return (
                                     <>
                                         <div className="skills-data-container">
-                                            <p>Basic</p>
-                                            <p>Basic</p>
-                                            <p>Basic</p>
-                                            <p>Basic</p>
-                                            <p>Basic</p>
-                                            <p>Basic</p>
-                                            <p>Basic</p>
-                                            <p>Basic</p>
-                                            <p>Basic</p>
-                                            <p>Basic</p>
+                                            <div style={{ height: "80px", width: "80px" }}>
+                                                <AnimatedProgressProvider
+                                                    valueStart={0}
+                                                    valueEnd={66}
+                                                    duration={1.4}
+                                                    easingFunction={easeQuadInOut}
+                                                >
+                                                    {value => {
+                                                        const roundedValue = Math.round(value);
+                                                        return (
+                                                            <CircularProgressbarWithChildren
+                                                                value={value}
+                                                                styles={buildStyles({ pathTransition: "none" })}
+                                                            >
+                                                                <img
+                                                                    style={{ width: 30, marginTop: -5 }}
+                                                                    src="https://i.imgur.com/b9NyUGm.png"
+                                                                    alt="doge"
+                                                                />
+                                                                <div style={{ fontSize: 12, marginTop: -5 }}>
+                                                                    <strong>{roundedValue}</strong> mate
+                                                                </div>
+                                                            </CircularProgressbarWithChildren>
+                                                        );
+                                                    }}
+                                                </AnimatedProgressProvider>
+                                            </div>
+                                            <p>CSS</p>
+                                            <p>JavaScript</p>
                                         </div>
                                     </>
                                 )
                             } else if (currItem === "advanced") {
                                 return (
                                     <>
-                                        <div className="skills-data-container"><p>Advanced</p></div>
+                                        <div className="skills-data-container">
+                                            <p>React.JS</p>
+                                            <p>React Native</p>
+                                            <p>TypeScript</p>
+                                        </div>
                                     </>
                                 )
                             } else if (currItem === "uxui") {
                                 return (
                                     <>
-                                        <div className="skills-data-container"><p>UX/UI</p></div>
+                                        <div className="skills-data-container">
+                                            <p>BootStrap</p>
+                                            <p>MaterialUI</p>
+                                            <p>Carbon</p>
+                                            <p>HTML Templates</p>
+                                        </div>
                                     </>
                                 )
                             } else if (currItem === "further") {
                                 return (
                                     <>
-                                        <div className="skills-data-container"><p>Further</p></div>
+                                        <div className="skills-data-container">
+                                            <p>Figma</p>
+                                            <p>Core Java</p>
+                                            <p>DSA</p>
+                                        </div>
                                     </>
                                 )
                             }
