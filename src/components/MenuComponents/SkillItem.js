@@ -17,7 +17,7 @@ const SkillItem = (props) => {
         const timer = setInterval(() => {
             current += increment;
             setCounter(current);
-            if (current == max) {
+            if (current === max) {
                 clearInterval(timer);
             }
         }, 20);
