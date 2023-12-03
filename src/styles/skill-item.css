@@ -1,0 +1,66 @@
+/* CSS for Skills Item component */
+
+.skill-item-main-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+    padding: 5px 0 15px 0;
+    border-bottom: 1px var(--bg-black-150) solid;
+}
+
+.skill-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+}
+
+.skill-progress-container {
+    width: 100%;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    margin: -9px 13px 0 8px;
+}
+
+.skill-progress-container p {
+    color: var(--text-black-900);
+    font-family: 'Stylish', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.skill-progress-bar {
+    margin-top: -5px;
+    background-color: var(--bg-black-150);
+    height: 5px;
+    border-radius: 10px;
+}
+
+.skill-progress-indicator {
+    background: var(--skin-color-medium);
+    /* background: linear-gradient(to right, rgb(69, 69, 241), magenta); */
+    height: 5px;
+    border-radius: 10px;
+    transition: width 2s ease;
+}
+
+.skill-strength-container {
+    border-radius: 50%;
+    background-color: var(--bg-black-900);
+    padding: 1px 0;
+    filter: drop-shadow(0 2px 2px var(--text-black-700));
+    width: 40px !important;
+    height: 35px !important;
+}
+
+.skill-strength-container p {
+    align-self: center;
+    font-size: 10px;
+}
+
+.skill-strength-container p > span {
+    font-size: 15px;
+}

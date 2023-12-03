@@ -1,12 +1,6 @@
 import React, { Fragment, useState } from "react";
 import "../../styles/skills-web-view.css";
-import {
-    CircularProgressbarWithChildren,
-    buildStyles
-} from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import { easeQuadInOut } from "d3-ease";
-import AnimatedProgressProvider from "./AnimatedProgressProvider";
+import SkillItem from "./SkillItem";
 
 const SkillsWebView = () => {
 
@@ -73,35 +67,21 @@ const SkillsWebView = () => {
                                 return (
                                     <>
                                         <div className="skills-data-container">
-                                            <div style={{ height: "80px", width: "80px" }}>
-                                                <AnimatedProgressProvider
-                                                    valueStart={0}
-                                                    valueEnd={66}
-                                                    duration={1.4}
-                                                    easingFunction={easeQuadInOut}
-                                                >
-                                                    {value => {
-                                                        const roundedValue = Math.round(value);
-                                                        return (
-                                                            <CircularProgressbarWithChildren
-                                                                value={value}
-                                                                styles={buildStyles({ pathTransition: "none" })}
-                                                            >
-                                                                <img
-                                                                    style={{ width: 30, marginTop: -5 }}
-                                                                    src="https://i.imgur.com/b9NyUGm.png"
-                                                                    alt="doge"
-                                                                />
-                                                                <div style={{ fontSize: 12, marginTop: -5 }}>
-                                                                    <strong>{roundedValue}</strong> mate
-                                                                </div>
-                                                            </CircularProgressbarWithChildren>
-                                                        );
-                                                    }}
-                                                </AnimatedProgressProvider>
-                                            </div>
-                                            <p>CSS</p>
-                                            <p>JavaScript</p>
+                                            <SkillItem
+                                                skillTitle="HTML"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"85"}
+                                            />
+                                            <SkillItem
+                                                skillTitle="CSS"
+                                                skillIcon={require("../../assets/images/css.png")}
+                                                skillStrength={"65"}
+                                            />
+                                            <SkillItem
+                                                skillTitle="JavaScript"
+                                                skillIcon={require("../../assets/images/javascript.png")}
+                                                skillStrength={"55"}
+                                            />
                                         </div>
                                     </>
                                 )
@@ -109,9 +89,26 @@ const SkillsWebView = () => {
                                 return (
                                     <>
                                         <div className="skills-data-container">
-                                            <p>React.JS</p>
-                                            <p>React Native</p>
-                                            <p>TypeScript</p>
+                                            <SkillItem
+                                                skillTitle="React.js"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"80"}
+                                            />
+                                            <SkillItem
+                                                skillTitle="React Native"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"75"}
+                                            />
+                                            <SkillItem
+                                                skillTitle="Redux"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"80"}
+                                            />
+                                            <SkillItem
+                                                skillTitle="TypeScript"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"85"}
+                                            />
                                         </div>
                                     </>
                                 )
@@ -119,10 +116,26 @@ const SkillsWebView = () => {
                                 return (
                                     <>
                                         <div className="skills-data-container">
-                                            <p>BootStrap</p>
-                                            <p>MaterialUI</p>
-                                            <p>Carbon</p>
-                                            <p>HTML Templates</p>
+                                            <SkillItem
+                                                skillTitle="BootStrap"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"85"}
+                                            />
+                                            <SkillItem
+                                                skillTitle="MaterialUI"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"85"}
+                                            />
+                                            <SkillItem
+                                                skillTitle="Carbon"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"85"}
+                                            />
+                                            <SkillItem
+                                                skillTitle="ThemeForest (HTML Templates)"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"85"}
+                                            />
                                         </div>
                                     </>
                                 )
@@ -130,9 +143,21 @@ const SkillsWebView = () => {
                                 return (
                                     <>
                                         <div className="skills-data-container">
-                                            <p>Figma</p>
-                                            <p>Core Java</p>
-                                            <p>DSA</p>
+                                            <SkillItem
+                                                skillTitle="Next.JS"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"85"}
+                                            />
+                                            <SkillItem
+                                                skillTitle="Figma"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"85"}
+                                            />
+                                            {/* <SkillItem
+                                                skillTitle="DSA"
+                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillStrength={"85"}
+                                            /> */}
                                         </div>
                                     </>
                                 )

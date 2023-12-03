@@ -19,9 +19,9 @@ const AsideNavbar = (props) => {
         <>
             <div className={isOpen ? "aside-main-container active" : "aside-main-container"}>
                 <div className="aside-logo">
-                    <a href="#">
+                    <div>
                         <img src={require("../../assets/images/light-theme-logo.png")} alt="logo-img" className="logo-icon" />
-                    </a>
+                    </div>
                 </div>
                 <div className="aside-toggle" onClick={() => toggleSideBar()}>
                     <i className="bi bi-list toggle-icon"></i>
