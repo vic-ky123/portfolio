@@ -91,22 +91,22 @@ const SkillsWebView = () => {
                                         <div className="skills-data-container">
                                             <SkillItem
                                                 skillTitle="React.js"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/react_js.png")}
                                                 skillStrength={"80"}
                                             />
                                             <SkillItem
                                                 skillTitle="React Native"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/react_js.png")}
                                                 skillStrength={"75"}
                                             />
                                             <SkillItem
                                                 skillTitle="Redux"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/redux.png")}
                                                 skillStrength={"80"}
                                             />
                                             <SkillItem
                                                 skillTitle="TypeScript"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/typescript.png")}
                                                 skillStrength={"85"}
                                             />
                                         </div>
@@ -118,22 +118,22 @@ const SkillsWebView = () => {
                                         <div className="skills-data-container">
                                             <SkillItem
                                                 skillTitle="BootStrap"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/bootstrap.png")}
                                                 skillStrength={"85"}
                                             />
                                             <SkillItem
                                                 skillTitle="MaterialUI"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/material.png")}
                                                 skillStrength={"85"}
                                             />
                                             <SkillItem
                                                 skillTitle="Carbon"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/carbon_ui.png")}
                                                 skillStrength={"85"}
                                             />
                                             <SkillItem
                                                 skillTitle="ThemeForest (HTML Templates)"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/themeforest.png")}
                                                 skillStrength={"85"}
                                             />
                                         </div>
@@ -145,12 +145,12 @@ const SkillsWebView = () => {
                                         <div className="skills-data-container">
                                             <SkillItem
                                                 skillTitle="Next.JS"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/next_js.png")}
                                                 skillStrength={"85"}
                                             />
                                             <SkillItem
                                                 skillTitle="Figma"
-                                                skillIcon={require("../../assets/images/html.png")}
+                                                skillIcon={require("../../assets/images/figma.png")}
                                                 skillStrength={"85"}
                                             />
                                             {/* <SkillItem
